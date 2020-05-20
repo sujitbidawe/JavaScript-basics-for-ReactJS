@@ -67,3 +67,26 @@ const jobs = [
 
 const activeJobs = jobs.filter (job => job.isActive); // this is same as line number 64 to 66
 console.log(activeJobs);
+
+// here, "this" doenst return person2 object since selfTimeout is not person2's function, 
+// we need to explicitely declare "this" in the person2's body and pass it to the selfTimeout method.
+const person2 = {
+    talk(){
+        var self = this;
+        setTimeout(function() {
+            console.log("self", self);
+        }, 1000);
+    }
+};
+
+// arrow functions, by default, refer to the parent function. no need to declare this, can use directly.
+const person3 = {
+    talk(){
+        setTimeout(() => {
+            console.log("this", this);
+        }, 1000);
+    }
+};
+
+person2.talk();
+person3.talk();
