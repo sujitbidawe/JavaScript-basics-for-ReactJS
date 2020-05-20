@@ -90,3 +90,9 @@ const person3 = {
 
 person2.talk();
 person3.talk();
+
+
+// map
+const colors = ["red", "green", "blue"];
+const items = colors.map(color => `<li>${color}</li>`); // backtick is used for cleaner code
+console.log(items);
