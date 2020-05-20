@@ -96,3 +96,50 @@ person3.talk();
 const colors = ["red", "green", "blue"];
 const items = colors.map(color => `<li>${color}</li>`); // backtick is used for cleaner code
 console.log(items);
+
+const address = {
+    street: '',
+    city: '',
+    country: ''
+};
+
+// repeated use of "address." 
+const street = address.street; 
+const city = address.city;
+const country = address.country;
+
+// object destructuring to remove redendency
+//  const{ street, city, country } = address; // assigning values of object properties to the constants
+const { street: st } = address; // only one field with new name as "st"
+
+const first = [1, 2, 3];
+const second = [4, 5, 6];
+
+// spread operator
+const combined = first.concat(second);
+const cobined = [...first, "a", ...second]; // with spread we can add element in between two arrays
+
+const clonedFirst = [...first];
+console.log(first);
+console.log(clonedFirst);
+
+const firstObject = { name: "foo"};
+const secondObject = { job: "bar"};
+
+const combinedObject = { ...firstObject, ...secondObject, location: "Pune"};
+console.log(combinedObject);
+const clonedFirstObject = { ...firstObject};
+console.log("clonedObject = " + clonedFirstObject);
+
+// classes
+class Person {
+    constructor(name) {
+        this.name = name;
+    }
+    walk(){
+        console.log("walking");
+    }
+}
+
+const person4 = new Person("classFoo");
+console.log(person4.name);
