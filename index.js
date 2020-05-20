@@ -141,5 +141,14 @@ class Person {
     }
 }
 
-const person4 = new Person("classFoo");
-console.log(person4.name);
+class Teacher extends Person{
+    constructor(name, degree){
+        super(name);
+        this.degree = degree;
+    }
+    teach(){
+        console.log("teaches");
+    }
+}
+
+const teacher = new Teacher("teacherFoo", "MSc");
