@@ -1,4 +1,7 @@
-import Teacher from './Teacher.js';
+import Teacher, { promote } from './Teacher.js';
+
+// default -> import ... from '';
+// named -> import { ... } from '';
 
 // var is accessible from the whole function
 function sayHelloWithVar(){
