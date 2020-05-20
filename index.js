@@ -24,7 +24,9 @@ const x = 5;
 // person object with 3 members. 1 property and 2 methods
 const person = {
     name: 'foo',
-    walk: function() {},
+    walk() {
+        console.log(this); // "this" returns reference to current object
+    },
     talk() {}
 };
 
@@ -36,3 +38,9 @@ person[targetMember] = 'sujit'; // when we dont know beforehand which property o
 // this method
 
 console.log(person.name);
+person.walk();
+
+// every function in javascript in an object
+const walk = person.walk.bind(person);  // bind method sets the value of this permanently
+walk(); // gives person object without calling from person object since we bind the value of person with bind
+
