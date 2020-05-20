@@ -1,3 +1,5 @@
+import Teacher from './Teacher.js';
+
 // var is accessible from the whole function
 function sayHelloWithVar(){
     for ( var i = 0; i < 5; i++) {
@@ -75,7 +77,7 @@ const person2 = {
         var self = this;
         setTimeout(function() {
             console.log("self", self);
-        }, 1000);
+        }, 0);
     }
 };
 
@@ -84,7 +86,7 @@ const person3 = {
     talk(){
         setTimeout(() => {
             console.log("this", this);
-        }, 1000);
+        }, 0);
     }
 };
 
@@ -98,9 +100,9 @@ const items = colors.map(color => `<li>${color}</li>`); // backtick is used for 
 console.log(items);
 
 const address = {
-    street: '',
-    city: '',
-    country: ''
+    street: 'someStreet',
+    city: 'someCity',
+    country: 'someCountry'
 };
 
 // repeated use of "address." 
@@ -131,24 +133,11 @@ console.log(combinedObject);
 const clonedFirstObject = { ...firstObject};
 console.log("clonedObject = " + clonedFirstObject);
 
-// classes
-class Person {
-    constructor(name) {
-        this.name = name;
-    }
-    walk(){
-        console.log("walking");
-    }
-}
-
-class Teacher extends Person{
-    constructor(name, degree){
-        super(name);
-        this.degree = degree;
-    }
-    teach(){
-        console.log("teaches");
-    }
-}
-
+// modularity... moved code for Person and Teacher class to another files
 const teacher = new Teacher("teacherFoo", "MSc");
+teacher.teach();
+
+ 
+
+// check if map can be used with object
+// try modularity with simple classes
